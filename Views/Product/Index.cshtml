@@ -1,4 +1,5 @@
 ﻿
+
 @{
     ViewBag.Title = "Index";
 }
@@ -18,6 +19,7 @@
 <div ng-app="myApp">
     <div ng-controller="myCtrl" ng-init="GetAllData()" class="divList">
         <p class="divHead">List of Product</p>
+        <b>Ara:</b><input type="text" data-ng-model="search.Name" id="txtSearch" />
         <table cellpadding="12" class="table table-bordered table-hover">
             <tr>
                 <td>
@@ -39,7 +41,7 @@
                     <b>Actions</b>
                 </td>
             </tr>
-            <tr ng-repeat="Pro in ProductTable | filter:Name">
+            <tr ng-repeat="Pro in ProductTable | filter:search">
                 <td>
                     {{Pro.ID}}
                 </td>
@@ -59,10 +61,6 @@
                     <input type="button" class="btn btn-warning" value="Update" ng-click="UpdatePro(Pro)" />
                     <input type="button" class="btn btn-danger" value="Delete" ng-click="DeletePro(Pro)" />
                 </td>
-                
-                    <b>Ara:</b><input type="text" data-ng-model="Name" id="txtSearch" />
-                
-                
             </tr>
         </table>
         <div class="form-horizontal" role="form">
@@ -77,7 +75,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Name:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Name" ng-model="ProName">
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="ProName">
                             </div>
                         </div>
                     </div>
@@ -85,7 +83,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Model:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputPassword" placeholder="Model" ng-model="ProModel">
+                                <input type="text" class="form-control" id="model" placeholder="Model" ng-model="ProModel">
                             </div>
                         </div>
                     </div>
@@ -93,7 +91,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Category:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputLabel3" placeholder="Category" ng-model="ProCategory">
+                                <input type="text" class="form-control" id="category" placeholder="Category" ng-model="ProCategory">
                             </div>
                         </div>
                     </div>
@@ -101,7 +99,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Price:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="inputLabel3" placeholder="Price" ng-model="ProPrice">
+                                <input type="text" class="form-control" id="price" placeholder="Price" ng-model="ProPrice">
                             </div>
                         </div>
                     </div>
