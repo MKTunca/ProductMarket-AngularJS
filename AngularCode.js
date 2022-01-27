@@ -1,6 +1,4 @@
-﻿$(document).ready(function () {
-    $("#txtSearch").focus();
-});
+
 var app = angular.module("myApp", []);
 app.controller("myCtrl", function ($scope, $http) {
         $scope.InsertData = function () {
