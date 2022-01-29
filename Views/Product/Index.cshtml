@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 <script src="~/Scripts/angular.min.js"></script>
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/AngularCode.js"></script>
 <style>
     .btn-space {
@@ -46,16 +45,16 @@
                     {{Pro.ID}}
                 </td>
                 <td>
-                    {{Pro.Name}}
+                    {{Pro.Name | uppercase}}
                 </td>
                 <td>
-                    {{Pro.Model}}
+                    {{Pro.Model | uppercase}}
                 </td>
                 <td>
                     {{Pro.Category}}
                 </td>
                 <td>
-                    {{Pro.Price}}
+                    {{Pro.Price |currency : '₺' :2}}
                 </td>
                 <td>
                     <input type="button" class="btn btn-warning" value="Update" ng-click="UpdatePro(Pro)" />
